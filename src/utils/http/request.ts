@@ -1,7 +1,7 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 import { ElMessage, ElMessageBox } from 'element-plus';
 import { localStorage } from '@/utils/storage';
-import {  useUserStore } from "@/store/user";
+import {  useStore } from "@/store";
 
 // 创建 axios 实例
 const service = axios.create({
@@ -18,8 +18,8 @@ service.interceptors.request.use(
                 `Expected 'config' and 'config.headers' not to be undefined`,
             );
         }
-        const  user  = useUserStore();
-        if (user.token) {
+        const  {userStore}  = useStore();
+        if (userStore.token) {
             config.headers.Authorization = `${localStorage.get('token')}`;
         }
         return config;
@@ -33,7 +33,7 @@ service.interceptors.request.use(
 service.interceptors.response.use(
     (response: AxiosResponse) => {
         const { code, msg } = response.data;
-        if (code === '00000') {
+        if (code === 0) {
             return response.data;
         } else {
             // 响应数据为二进制流处理(Excel导出)
@@ -71,3 +71,7 @@ service.interceptors.response.use(
         return Promise.reject(error.message);
     },
 );
+
+
+// 导出 axios 实例
+export default service;

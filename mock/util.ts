@@ -3,7 +3,7 @@
 export function resultSuccess<T = Recordable>(result: T, { message = 'ok' } = {}) {
   return {
     code: 0,
-    result,
+    data:result,
     message,
     type: 'success',
   };
@@ -29,7 +29,7 @@ export function resultPageSuccess<T = any>(
 export function resultError(message = 'Request failed', { code = -1, result = null } = {}) {
   return {
     code,
-    result,
+    data:result,
     message,
     type: 'error',
   };

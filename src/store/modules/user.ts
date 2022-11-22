@@ -2,7 +2,7 @@
 
 import { defineStore } from 'pinia'
 
-export const useUserStore = defineStore({
+ const useUserStore = defineStore({
   id: 'user', // id必填，且需要唯一
   state: () => {
     return {
@@ -21,3 +21,4 @@ export const useUserStore = defineStore({
     }
 })
 
+export default useUserStore

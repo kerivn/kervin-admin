@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
-
+export const Layout = () => import('@/layout/index.vue');
 const routes: Array<RouteRecordRaw> = [
     {
         path: '/login',
@@ -19,7 +19,7 @@ const routes: Array<RouteRecordRaw> = [
             keepAlive: true,
             requireAuth: true,
         },
-        component: () => import('@/views/dashbord/index.vue'),
+        component: Layout,
     },
 ];
 
