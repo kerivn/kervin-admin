@@ -1,5 +1,5 @@
 <template>
-  <div><Icon name="aiming"/></div>
+  <div> <icon name='application-menu' theme="outline" size="24" fill="#333"/></div>
 </template>
 
 <script lang='ts' setup>

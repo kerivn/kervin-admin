@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 export const Layout = () => import('@/layout/index.vue');
-const routes: Array<RouteRecordRaw> = [
+export const constantRoutes: Array<RouteRecordRaw> = [
     {
         path: '/login',
         name: 'Login',
@@ -25,6 +25,6 @@ const routes: Array<RouteRecordRaw> = [
 
 const router = createRouter({
     history: createWebHistory(),
-    routes,
+    routes: constantRoutes,
 });
 export default router;

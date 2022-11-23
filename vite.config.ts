@@ -19,7 +19,7 @@ export default defineConfig(({ mode, command }: ConfigEnv): UserConfig => {
         server: {
             host: '0.0.0.0',
             port: Number(env.VITE_APP_PORT),
-            open: true, // 运行自动打开浏览器
+            open: false, // 运行自动打开浏览器
         },
         resolve: {
             alias: {
