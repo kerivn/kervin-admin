@@ -18,7 +18,7 @@ const menus = [
         children: [
             {
                 path: 'user',
-                component: 'system/user/index',
+                component: 'system/user',
                 name: 'user',
                 meta: {
                     title: '用户管理',

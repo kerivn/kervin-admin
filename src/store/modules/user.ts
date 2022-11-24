@@ -6,8 +6,11 @@ import { defineStore } from 'pinia'
   id: 'user', // id必填，且需要唯一
   state: () => {
     return {
-      name: '张三',
-      token:'token'
+      token:  '',
+      nickname: '',
+      avatar: '',
+      roles: [],
+      perms: []
     }
   },
     // 开启数据缓存

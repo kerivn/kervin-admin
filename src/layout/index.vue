@@ -38,8 +38,9 @@
 <script lang='ts' setup>
 import { AppMain, Navbar, SideBar } from './components/index';
 import { useStore } from "@/store";
-const { settingStore } = useStore()
+const { settingStore,permissionStore } = useStore()
 const layoutModel = computed(() => settingStore.layoutModel);
+permissionStore.generateRoutes(['ADMIN'])
 </script>
 <style scoped lang='scss'>
 @import '@/styles/mixin.scss';

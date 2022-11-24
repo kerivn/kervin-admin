@@ -21,6 +21,7 @@ export interface SettingState {
   fixedHeader: boolean;
   showSettings: boolean;
   sidebarLogo: boolean;
+  layoutModel:string;
 }
 
 export interface UserState {

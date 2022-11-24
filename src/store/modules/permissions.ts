@@ -1,11 +1,14 @@
 import { PermissionState } from './types';
 import { RouteRecordRaw } from 'vue-router';
 import { defineStore } from 'pinia';
-import { constantRoutes } from '@/router';
+import { constantRoutes } from '@/router/basic';
 import { apiGetlistRoutes } from '@/api/menus';
+import{routeModules} from '@/router/index';
 
-const modules = import.meta.glob('../../views/**/**.vue');
 export const Layout = () => import('@/layout/index.vue');
+export const NotFound = () => import('@/views/error-page/404.vue');
+
+
 
 const hasPermission = (roles: string[], route: RouteRecordRaw) => {
   if (route.meta && route.meta.roles) {
@@ -32,11 +35,11 @@ export const filterAsyncRoutes = (
       if (tmp.component == 'Layout') {
         tmp.component = Layout;
       } else {
-        const component = modules[`../../views/${tmp.component}.vue`] as any;
+        const component = routeModules[tmp.component] as any;
         if (component) {
           tmp.component = component;
         } else {
-          tmp.component = modules[`../../views/error-page/404.vue`];
+          tmp.component = NotFound;
         }
       }
       res.push(tmp);
@@ -65,6 +68,8 @@ const usePermissionStore = defineStore({
         apiGetlistRoutes()
           .then(response => {
             const asyncRoutes = response.data;
+            console.log(asyncRoutes,roles);
+            
             const accessedRoutes = filterAsyncRoutes(asyncRoutes, roles);
             this.setRoutes(accessedRoutes);
             resolve(accessedRoutes);
