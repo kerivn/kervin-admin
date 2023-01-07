@@ -1,4 +1,19 @@
 module.exports = {
+    tabWidth: 2,
+    jsxSingleQuote: true,
+    jsxBracketSameLine: true,
+    printWidth: 100,
+    singleQuote: true,
+    semi: false,
+    overrides: [
+      {
+        files: '*.json',
+        options: {
+          printWidth: 200,
+        },
+      },
+    ],
+    arrowParens: 'always',
     // 一行最多 80 字符
     printWidth: 80,
     // 使用 4 个空格缩进
@@ -6,7 +21,7 @@ module.exports = {
     // 不使用 tab 缩进，而使用空格
     useTabs: false,
     // 行尾需要有分号
-    semi: true,
+    semi: false,
     // 使用单引号代替双引号
     singleQuote: true,
     // 对象的 key 仅在必要时用引号

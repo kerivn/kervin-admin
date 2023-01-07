@@ -40,4 +40,4 @@ module.exports = {
         'body-leading-blank': [1, 'always'],
         'header-max-length': [0, 'always', 72],
     },
-};
+}
