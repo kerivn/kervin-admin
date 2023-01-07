@@ -7,14 +7,16 @@ const count = ref(0)
 </script>
 
 <template>
-    <h1>{{ msg }}</h1>
+    <h>{{ msg }}</h>
 
     <div class="card">
-        <button type="button" @click="count++">count is {{ count }}</button>
+        <ebutton type="button" @click="count++">count is {{ count }}</ebutton>
+
         <p>
             Edit
             <code>components/HelloWorld.vue</code> to test HMR
         </p>
+        <el-button type="primary" round>Primary</el-button>
     </div>
 
     <p>
@@ -25,9 +27,9 @@ const count = ref(0)
     </p>
     <p>
         Install
-        <a href="https://github.com/johnsoncodehk/volar" target="_blank"
-            >Volar</a
-        >
+        <a href="https://github.com/johnsoncodehk/volar" target="_blank">
+            Volar
+        </a>
         in your IDE for a better DX
     </p>
     <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
