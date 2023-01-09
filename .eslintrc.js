@@ -145,6 +145,8 @@ module.exports = {
         'no-extra-boolean-cast': 'warn',
         'no-case-declarations': 'warn',
         'no-async-promise-executor': 'warn',
+        // 要求组件名称总是多字的
+        'vue/multi-word-component-names': 0,
     },
     globals: {
         defineProps: 'readonly',
