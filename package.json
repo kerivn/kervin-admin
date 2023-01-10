@@ -8,11 +8,11 @@
         "preview": "vite preview",
         "lint:eslint": "eslint --cache --max-warnings 0  \"{src,mock,build}/**/*.{vue,js,ts,tsx}\" --fix",
         "lint:prettier": "prettier --write  \"src/**/*.{js,ts,json,tsx,css,less,scss,vue,html,md}\"",
-        "lint:stylelint": "stylelint --cache --fix \"**/*.{vue,css,scss,postcss,less}\" --cache --cache-location node_modules/.cache/stylelint/",
+        "lint:style": "stylelint --cache --fix \"**/*.{vue,css,scss,postcss,less}\" --cache --cache-location node_modules/.cache/stylelint/",
         "lint:lint-staged": "lint-staged -c ./.husky/lintstagedrc.js",
-        "lint": "pnpm lint:eslint && pnpm lint:prettier",
+        "lint": "npm lint:eslint && npm run lint:style && npm lint:prettier",
         "prepare": "husky install",
-        "commit": "git-cz"
+        "commit": "git add . && git-cz"
     },
     "config": {
         "commitizen": {
@@ -43,12 +43,20 @@
         "eslint-plugin-vue": "^9.8.0",
         "husky": "^8.0.3",
         "lint-staged": "^13.1.0",
+        "postcss": "^8.4.21",
         "postcss-html": "^1.5.0",
+        "postcss-scss": "^4.0.6",
         "prettier": "^2.8.1",
+        "stylelint": "^14.16.1",
+        "stylelint-config-recess-order": "^3.1.0",
+        "stylelint-config-recommended-vue": "^1.4.0",
+        "stylelint-config-standard": "^29.0.0",
+        "stylelint-prettier": "^2.0.0",
         "typescript": "^4.9.3",
         "unplugin-auto-import": "^0.12.1",
         "unplugin-vue-components": "^0.22.12",
         "vite": "^4.0.0",
+        "vite-plugin-stylelint": "^4.1.5",
         "vue-tsc": "^1.0.11"
     },
     "pnpm": {

@@ -1,7 +1,12 @@
 module.exports = {
-    '!(public|dist)/*.{vue,js,jsx,ts,tsx}': [
+    '(src|build|mock)/**/*.{js,jsx,ts,tsx}': [
         'eslint --fix',
         'prettier --write',
     ],
-    '*.{css,scss,postcss,less}': ['prettier --write'],
+    '*.vue': ['eslint --fix', 'prettier --write', 'stylelint --fix'],
+    '*src/**/*.{css,scss,postcss,less}': [
+        'stylelint --fix',
+        'prettier --write',
+    ],
+    '*.md': ['prettier --write'],
 }
