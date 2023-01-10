@@ -3,9 +3,8 @@ module.exports = {
         'eslint --fix',
         'prettier --write',
     ],
-    '*.vue': ['eslint --fix', 'prettier --write', 'stylelint --fix'],
+    '*.vue': ['eslint --fix', 'prettier --write'],
     '*src/**/*.{css,scss,postcss,less}': [
-        'stylelint --fix',
         'prettier --write',
     ],
     '*.md': ['prettier --write'],
