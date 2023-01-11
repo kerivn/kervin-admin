@@ -9,7 +9,7 @@
         "lint:eslint": "eslint --cache --max-warnings 0  \"{src,mock,build}/**/*.{vue,js,ts,tsx}\" --fix",
         "lint:prettier": "prettier --write  \"src/**/*.{js,ts,json,tsx,css,less,scss,vue,html,md}\"",
         "lint:lint-staged": "lint-staged -c ./.husky/lintstagedrc.js",
-        "lint": "npm lint:eslint && npm lint:prettier",
+        "lint": "npm run lint:eslint && npm run lint:prettier",
         "prepare": "husky install",
         "commit": "git add . && git-cz"
     },

@@ -14,14 +14,14 @@ module.exports = {
       },
     ],
     arrowParens: 'always',
-    // 一行最多 80 字符
-    printWidth: 80,
-    // 使用 4 个空格缩进
-    tabWidth: 4,
+    // 一行最多 150 字符
+    printWidth: 150,
+    // 使用 2 个空格缩进
+    tabWidth: 2,
     // 不使用 tab 缩进，而使用空格
     useTabs: false,
     // 行尾需要有分号
-    semi: false,
+    semi: true,
     // 使用单引号代替双引号
     singleQuote: true,
     // 对象的 key 仅在必要时用引号

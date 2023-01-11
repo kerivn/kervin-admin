@@ -1,5 +1,5 @@
 <template>
-    <div>欢迎页</div>
+  <div>欢迎页</div>
 </template>
 
 <script setup lang="ts"></script>
